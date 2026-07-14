@@ -1,6 +1,6 @@
 const postsContainer = document.getElementById('posts');
 const paginationContainer = document.getElementById('pagination');
-const POSTS_PER_PAGE = 4;
+const POSTS_PER_PAGE = 8;
 let currentPage = 1;
 let allPosts = [];
 
@@ -13,24 +13,23 @@ function formatDate(dateString) {
 }
 
 function createPostCard(post) {
-  const thumbnail = post.thumbnail || 'https://via.placeholder.com/800x450?text=Sem+imagem';
-  const summary = post.summary || post.content || '';
-
   return `
-    <article class="post-card">
-      <div class="thumbnail" style="background-image: url('${thumbnail}')"></div>
-      <div class="card-body">
-        <h2>${post.title}</h2>
-        <p class="meta">${formatDate(post.date)} · ${post.author || 'Autor não informado'}</p>
-        <p class="summary">${summary}</p>
-      </div>
-    </article>
+    <a class="card-link" href="post.html?slug=${post.slug}">
+      <article class="post-card">
+        <div class="thumbnail" style="background-image: url('${post.thumbnail}')"></div>
+        <div class="card-body">
+          <h2>${post.title}</h2>
+          <p class="meta">${formatDate(post.date)} · ${post.author}</p>
+          <p class="summary">${post.summary}</p>
+        </div>
+      </article>
+    </a>
   `;
 }
 
 function renderPosts(posts) {
   if (!posts || posts.length === 0) {
-    postsContainer.innerHTML = '<div class="empty-state">Nenhum post encontrado. Crie conteúdo em <code>data/data.json</code>.</div>';
+    postsContainer.innerHTML = '<div class="empty-state">Nenhum post encontrado. Crie conteúdo em <code>data/index.json</code> e em <code>data/posts/</code>.</div>';
     return;
   }
 
@@ -82,7 +81,7 @@ function showError(message, error) {
   `;
 }
 
-fetch('data/data.json')
+fetch('data/index.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP ${response.status} ${response.statusText}`);
@@ -94,6 +93,6 @@ fetch('data/data.json')
     renderCurrentPage();
   })
   .catch(error => {
-    showError('Verifique se o arquivo data/data.json existe e se está acessível via servidor.', error);
+    showError('Verifique se os arquivos em data/index.json e data/posts/ existem e estão acessíveis via servidor.', error);
     console.error(error);
   });

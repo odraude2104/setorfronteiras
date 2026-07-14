@@ -1,0 +1,9 @@
+{
+  "thumbnail": "images/post-11.svg",
+  "author": "Equipe Setor Fronteiras",
+  "title": "Postagem de Exemplo 11",
+  "summary": "Resumo da postagem de exemplo 11.",
+  "slug": "post-11",
+  "content": "<p>Este é o conteúdo da postagem de exemplo 11, criado para preencher o blog com entradas fictícias.</p><p>Adicione novos parágrafos, links ou HTML simples no campo content.</p>",
+  "date": "2026-07-03"
+}

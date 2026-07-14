@@ -69,6 +69,11 @@ img {
   padding-bottom: 24px;
 }
 
+.card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .post-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -111,6 +116,52 @@ img {
   margin: 0;
   color: #334155;
   min-height: 80px;
+}
+
+.post-detail {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  margin-bottom: 48px;
+}
+
+.post-detail .detail-header {
+  position: relative;
+  min-height: 320px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.post-detail .detail-content {
+  padding: 32px 28px;
+}
+
+.post-detail .detail-content h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 2.5vw, 2.75rem);
+}
+
+.post-detail .detail-content .meta {
+  margin: 0 0 24px;
+}
+
+.post-detail .detail-content .post-body {
+  color: #334155;
+}
+
+.post-detail .detail-content .post-body p {
+  margin: 0 0 1.2rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .pagination {

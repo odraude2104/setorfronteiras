@@ -5,29 +5,34 @@ Blog simples usando posts definidos manualmente em JSON.
 ## Como usar
 
 1. Abra `index.html` no navegador ou use um servidor local.
-2. Edite `data/data.json` para adicionar ou alterar posts.
-3. Recarregue a página para ver os posts atualizados.
+2. Edite os arquivos em `data/posts/*.json` para adicionar ou alterar posts.
+3. Atualize `data/index.json` para a lista de posts exibida na homepage.
+4. Recarregue a página para ver as alterações.
 
-## Estrutura de post
+## Estrutura de arquivos
 
-Cada post agora pode conter um thumbnail e é exibido em cards na página inicial, com paginação.
+- `data/index.json`: lista de posts exibidos na homepage.
+- `data/posts/post-01.json` ... `data/posts/post-25.json`: cada postagem separada.
+- `images/post-01.svg` ... `images/post-25.svg`: miniaturas usadas nos cards.
+- `post.html`: página de postagem individual.
+
+## Modelo de post individual
 
 ```json
-[
-  {
-    "title": "Primeiro post",
-    "date": "2026-07-14",
-    "author": "Seu nome",
-    "thumbnail": "https://via.placeholder.com/800x450?text=Thumbnail",
-    "summary": "Resumo curto do post.",
-    "content": "<p>Escreva o conteúdo do post aqui. Você pode usar HTML simples como <strong>negrito</strong> ou listas.</p>"
-  }
-]
+{
+  "slug": "post-01",
+  "title": "Primeiro post do blog",
+  "date": "2026-07-14",
+  "author": "Equipe Setor Fronteiras",
+  "thumbnail": "images/post-01.svg",
+  "summary": "Resumo curto do post.",
+  "content": "<p>Escreva o conteúdo do post aqui. Você pode usar HTML simples como <strong>negrito</strong>, listas ou parágrafos.</p>"
+}
 ```
 
-## Paginação
+## Paginação e navegação
 
-A página inicial mostra um conjunto limitado de posts por página. Ao adicionar mais postagens em `data/data.json`, novos botões de paginação aparecem automaticamente.
+A página inicial exibe cards com thumbnails e paginação. Ao clicar em um card, você é levado para `post.html?slug=post-XX`.
 
 ## Sugestão de teste local
 
