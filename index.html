@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Setor Fronteiras Blog</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <header class="site-header">
+        <div class="container">
+            <a href="./" class="logo">Setor Fronteiras</a>
+            <p class="tagline">Blog simples com posts carregados de JSON manual.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h1>Posts</h1>
+            <p>Edite o arquivo <code>data/data.json</code> para criar e atualizar suas postagens manualmente.</p>
+        </section>
+
+        <section id="posts" class="posts">
+            <div class="empty-state">Carregando posts...</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Sem formulário de criação por enquanto. Tudo é escrito manualmente em JSON.</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

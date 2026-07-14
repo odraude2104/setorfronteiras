@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Primeiro post do blog",
+    "date": "2026-07-14",
+    "author": "Equipe Setor Fronteiras",
+    "summary": "Este é um blog simples que carrega postagens diretamente do JSON.",
+    "content": "<p>Bem-vindo ao primeiro post do blog. Aqui você pode escrever o conteúdo manualmente no arquivo <code>data/data.json</code>.</p><p>Edite este arquivo e adicione novos posts sem usar formulário.</p>"
+  },
+  {
+    "title": "Como criar posts manualmente",
+    "date": "2026-07-14",
+    "author": "Equipe Setor Fronteiras",
+    "summary": "Adicione um novo objeto ao array JSON com título, data, autor, resumo e conteúdo.",
+    "content": "<p>O conteúdo do post pode conter HTML básico, como parágrafos, negrito e links.</p><p>Atualize a página no navegador após salvar o JSON.</p>"
+  }
+]
