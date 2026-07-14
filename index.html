@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Setor Fronteiras Blog</title>
+    <meta name="description" content="Blog simples com posts em JSON e homepage em cards." />
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header class="site-header">
-        <div class="container">
-            <a href="./" class="logo">Setor Fronteiras</a>
-            <p class="tagline">Blog simples com posts carregados de JSON manual.</p>
+        <div class="container header-inner">
+            <div>
+                <a href="./" class="logo">Setor Fronteiras</a>
+                <p class="tagline">Blog simples com posts carregados de JSON manualmente.</p>
+            </div>
+            <p class="small-note">Edite <code>data/data.json</code> para atualizar as postagens.</p>
         </div>
     </header>
 
     <main class="container">
         <section class="intro">
-            <h1>Posts</h1>
-            <p>Edite o arquivo <code>data/data.json</code> para criar e atualizar suas postagens manualmente.</p>
+            <h1>Últimos posts</h1>
+            <p>Veja a página inicial em cards com thumbnails, resumo e paginação.</p>
         </section>
 
-        <section id="posts" class="posts">
+        <section id="posts" class="posts-grid">
             <div class="empty-state">Carregando posts...</div>
         </section>
+
+        <nav id="pagination" class="pagination" aria-label="Paginação de posts"></nav>
     </main>
 
     <footer class="site-footer">

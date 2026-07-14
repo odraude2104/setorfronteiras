@@ -3,6 +3,7 @@
     "title": "Primeiro post do blog",
     "date": "2026-07-14",
     "author": "Equipe Setor Fronteiras",
+    "thumbnail": "https://via.placeholder.com/800x450?text=Post+1",
     "summary": "Este é um blog simples que carrega postagens diretamente do JSON.",
     "content": "<p>Bem-vindo ao primeiro post do blog. Aqui você pode escrever o conteúdo manualmente no arquivo <code>data/data.json</code>.</p><p>Edite este arquivo e adicione novos posts sem usar formulário.</p>"
   },
@@ -10,7 +11,48 @@
     "title": "Como criar posts manualmente",
     "date": "2026-07-14",
     "author": "Equipe Setor Fronteiras",
+    "thumbnail": "https://via.placeholder.com/800x450?text=Post+2",
     "summary": "Adicione um novo objeto ao array JSON com título, data, autor, resumo e conteúdo.",
     "content": "<p>O conteúdo do post pode conter HTML básico, como parágrafos, negrito e links.</p><p>Atualize a página no navegador após salvar o JSON.</p>"
+  },
+  {
+    "title": "Nova página inicial com cards",
+    "date": "2026-07-15",
+    "author": "Equipe Setor Fronteiras",
+    "thumbnail": "https://via.placeholder.com/800x450?text=Post+3",
+    "summary": "A página inicial agora exibe os posts em cards com imagem e resumo.",
+    "content": "<p>Cada card mostra uma miniatura, título, data e resumo. A paginação ajuda a navegar entre vários posts.</p>"
+  },
+  {
+    "title": "Melhorias na navegação",
+    "date": "2026-07-15",
+    "author": "Equipe Setor Fronteiras",
+    "thumbnail": "https://via.placeholder.com/800x450?text=Post+4",
+    "summary": "A navegação entre as páginas agora é automática e fácil de usar.",
+    "content": "<p>Use os botões de paginação para ver mais posts sem precisar de formulários.</p>"
+  },
+  {
+    "title": "Postagem adicional 1",
+    "date": "2026-07-16",
+    "author": "Equipe Setor Fronteiras",
+    "thumbnail": "https://via.placeholder.com/800x450?text=Post+5",
+    "summary": "Este é um exemplo de post extra para mostrar a paginação em funcionamento.",
+    "content": "<p>Ao adicionar mais posts ao arquivo JSON, novos cards são mostrados automaticamente.</p>"
+  },
+  {
+    "title": "Postagem adicional 2",
+    "date": "2026-07-16",
+    "author": "Equipe Setor Fronteiras",
+    "thumbnail": "https://via.placeholder.com/800x450?text=Post+6",
+    "summary": "Mais um post para preencher a segunda página de exemplos.",
+    "content": "<p>Você pode escrever qualquer HTML simples no campo <code>content</code>.</p>"
+  },
+  {
+    "title": "Postagem adicional 3",
+    "date": "2026-07-16",
+    "author": "Equipe Setor Fronteiras",
+    "thumbnail": "https://via.placeholder.com/800x450?text=Post+7",
+    "summary": "Adicione quantos posts quiser ao JSON para ver a páginação crescer.",
+    "content": "<p>Lembre-se de manter o array JSON válido ao inserir novos objetos.</p>"
   }
 ]

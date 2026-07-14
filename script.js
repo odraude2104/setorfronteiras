@@ -1,4 +1,32 @@
 const postsContainer = document.getElementById('posts');
+const paginationContainer = document.getElementById('pagination');
+const POSTS_PER_PAGE = 4;
+let currentPage = 1;
+let allPosts = [];
+
+function formatDate(dateString) {
+  return new Date(dateString).toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric'
+  });
+}
+
+function createPostCard(post) {
+  const thumbnail = post.thumbnail || 'https://via.placeholder.com/800x450?text=Sem+imagem';
+  const summary = post.summary || post.content || '';
+
+  return `
+    <article class="post-card">
+      <div class="thumbnail" style="background-image: url('${thumbnail}')"></div>
+      <div class="card-body">
+        <h2>${post.title}</h2>
+        <p class="meta">${formatDate(post.date)} · ${post.author || 'Autor não informado'}</p>
+        <p class="summary">${summary}</p>
+      </div>
+    </article>
+  `;
+}
 
 function renderPosts(posts) {
   if (!posts || posts.length === 0) {
@@ -6,24 +34,42 @@ function renderPosts(posts) {
     return;
   }
 
-  const html = posts.map(post => {
-    const date = new Date(post.date).toLocaleDateString('pt-BR', {
-      day: '2-digit',
-      month: 'long',
-      year: 'numeric'
+  postsContainer.innerHTML = posts.map(createPostCard).join('');
+}
+
+function renderPagination(totalPages) {
+  if (totalPages <= 1) {
+    paginationContainer.innerHTML = '';
+    return;
+  }
+
+  let buttons = '';
+  for (let page = 1; page <= totalPages; page += 1) {
+    buttons += `<button class="page-button ${page === currentPage ? 'active' : ''}" data-page="${page}">${page}</button>`;
+  }
+
+  paginationContainer.innerHTML = buttons;
+  paginationContainer.querySelectorAll('.page-button').forEach(button => {
+    button.addEventListener('click', () => {
+      const page = Number(button.dataset.page);
+      if (page !== currentPage) {
+        goToPage(page);
+      }
     });
+  });
+}
 
-    return `
-      <article class="post-card">
-        <h2>${post.title}</h2>
-        <p class="meta">${date} · ${post.author}</p>
-        <p class="summary">${post.summary}</p>
-        <div class="content">${post.content}</div>
-      </article>
-    `;
-  }).join('');
+function goToPage(page) {
+  currentPage = page;
+  renderCurrentPage();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-  postsContainer.innerHTML = html;
+function renderCurrentPage() {
+  const start = (currentPage - 1) * POSTS_PER_PAGE;
+  const visiblePosts = allPosts.slice(start, start + POSTS_PER_PAGE);
+  renderPosts(visiblePosts);
+  renderPagination(Math.ceil(allPosts.length / POSTS_PER_PAGE));
 }
 
 function showError(message, error) {
@@ -43,7 +89,10 @@ fetch('data/data.json')
     }
     return response.json();
   })
-  .then(renderPosts)
+  .then(posts => {
+    allPosts = Array.isArray(posts) ? posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date)) : [];
+    renderCurrentPage();
+  })
   .catch(error => {
     showError('Verifique se o arquivo data/data.json existe e se está acessível via servidor.', error);
     console.error(error);
