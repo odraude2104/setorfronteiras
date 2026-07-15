@@ -94,6 +94,8 @@ img {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .card-body {
@@ -133,6 +135,8 @@ img {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .post-detail .detail-content {

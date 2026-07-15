@@ -1,6 +1,6 @@
 const postsContainer = document.getElementById('posts');
 const paginationContainer = document.getElementById('pagination');
-const POSTS_PER_PAGE = 8;
+const POSTS_PER_PAGE = 9;
 let currentPage = 1;
 let allPosts = [];
 
@@ -89,7 +89,8 @@ fetch('data/index.json')
     return response.json();
   })
   .then(posts => {
-    allPosts = Array.isArray(posts) ? posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date)) : [];
+    const activePosts = Array.isArray(posts) ? posts.filter(post => post.active) : [];
+    allPosts = activePosts.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
     renderCurrentPage();
   })
   .catch(error => {

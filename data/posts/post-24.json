@@ -1,9 +1,10 @@
 {
-  "thumbnail": "images/post-24.svg",
-  "author": "Equipe Setor Fronteiras",
-  "title": "Postagem de Exemplo 24",
-  "summary": "Resumo da postagem de exemplo 24.",
   "slug": "post-24",
+  "title": "Postagem de Exemplo 24",
+  "date": "2026-06-20",
+  "author": "Equipe Setor Fronteiras",
+  "thumbnail": "images/post-24.svg",
+  "summary": "Resumo da postagem de exemplo 24.",
   "content": "<p>Este é o conteúdo da postagem de exemplo 24, criado para preencher o blog com entradas fictícias.</p><p>Adicione novos parágrafos, links ou HTML simples no campo content.</p>",
-  "date": "2026-06-20"
+  "active": true
 }

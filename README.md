@@ -16,7 +16,9 @@ Blog simples usando posts definidos manualmente em JSON.
 - `images/post-01.svg` ... `images/post-25.svg`: miniaturas usadas nos cards.
 - `post.html`: página de postagem individual.
 
-## Modelo de post individual
+## Propriedade `active`
+
+Cada post agora deve indicar se está ativo ou não:
 
 ```json
 {
@@ -26,9 +28,12 @@ Blog simples usando posts definidos manualmente em JSON.
   "author": "Equipe Setor Fronteiras",
   "thumbnail": "images/post-01.svg",
   "summary": "Resumo curto do post.",
-  "content": "<p>Escreva o conteúdo do post aqui. Você pode usar HTML simples como <strong>negrito</strong>, listas ou parágrafos.</p>"
+  "content": "<p>Escreva o conteúdo do post aqui. Você pode usar HTML simples como <strong>negrito</strong>, listas ou parágrafos.</p>",
+  "active": true
 }
 ```
+
+A homepage só exibe posts com `active: true`.
 
 ## Paginação e navegação
 
