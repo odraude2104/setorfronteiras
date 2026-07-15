@@ -21,6 +21,11 @@ function renderPost(post) {
   const detailMeta = document.getElementById('detail-meta');
   const postBody = document.getElementById('post-body');
 
+  if (!post.enable) {
+    showError('Este post está desativado.');
+    return;
+  }
+
   detailHeader.style.backgroundImage = `url('${post.thumbnail}')`;
   detailTitle.textContent = post.title;
   detailMeta.textContent = `${new Date(post.date).toLocaleDateString('pt-BR', {
