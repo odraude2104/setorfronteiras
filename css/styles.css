@@ -5,8 +5,8 @@
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f2f4f8;
-  color: #1f2937;
+  background: #100D26;
+  color: #f2f4f8;
   line-height: 1.6;
 }
 
@@ -21,8 +21,8 @@ img {
 }
 
 .site-header {
-  background: #0f172a;
-  color: #f8fafc;
+  background: #100D26;
+  color: #f2f4f8;
   padding: 24px 0;
 }
 
@@ -59,7 +59,7 @@ img {
 
 .intro p {
   margin: 0;
-  color: #475569;
+  color: #1F1640;
 }
 
 .posts-grid {
