@@ -14,7 +14,7 @@ Blog simples usando posts definidos manualmente em JSON.
 - `images/post-01.svg` ... `images/post-25.svg`: miniaturas usadas nos cards.
 - `post.html`: página de postagem individual.
 
-## Propriedade `enable`
+## Propriedade `active`
 
 Cada post agora deve indicar se está habilitado ou não:
 
@@ -27,11 +27,11 @@ Cada post agora deve indicar se está habilitado ou não:
   "thumbnail": "images/post-01.svg",
   "summary": "Resumo curto do post.",
   "content": "<p>Escreva o conteúdo do post aqui. Você pode usar HTML simples como <strong>negrito</strong>, listas ou parágrafos.</p>",
-  "enable": true
+  "active": true
 }
 ```
 
-A homepage só exibe posts com `enable: true`. Um post desativado também não será exibido em `post.html`.
+A homepage só exibe posts com `active: true`. Um post desativado também não será exibido em `post.html`.
 
 ## Paginação e navegação
 

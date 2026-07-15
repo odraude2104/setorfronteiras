@@ -31,7 +31,7 @@ async function loadPostFiles() {
       }
 
       const post = await response.json();
-      if (post.enable) {
+      if (post.active === true) {
         posts.push(post);
       }
       consecutiveMissing = 0;

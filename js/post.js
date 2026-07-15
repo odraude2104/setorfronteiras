@@ -21,7 +21,7 @@ function renderPost(post) {
   const detailMeta = document.getElementById('detail-meta');
   const postBody = document.getElementById('post-body');
 
-  if (!post.enable) {
+  if (post.active !== true) {
     showError('Este post está desativado.');
     return;
   }
