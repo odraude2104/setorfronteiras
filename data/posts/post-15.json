@@ -6,5 +6,5 @@
   "thumbnail": "images/post-15.svg",
   "summary": "Resumo da postagem de exemplo 15.",
   "content": "<p>Este é o conteúdo da postagem de exemplo 15, criado para preencher o blog com entradas fictícias.</p><p>Adicione novos parágrafos, links ou HTML simples no campo content.</p>",
-  "active": true
+  "active": false
 }
